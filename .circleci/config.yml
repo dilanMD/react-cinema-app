@@ -123,7 +123,7 @@ jobs:
     executor: slack-executor
     steps:
       - slack/notify:
-          message: "${CIRCLE_BRANCH} branch deployment to s3 and cloudfront is complete"
+          message: "${CIRCLE_BRANCH} branch deployment to s3 and cloudfront is completed successfully"
           webhook: ${SLACK_WEBHOOK}
       - slack/status:
           webhook: ${SLACK_WEBHOOK}

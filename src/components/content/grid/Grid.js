@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Grid.scss';
 import Rating from '../rating/Rating';
@@ -12,14 +13,9 @@ const Grid = (props) => {
         {images.map((image, i) => {
           return (
             <div key={i}>
-              <div
-                className="grid-cell"
-                style={{ backgroundImage: `url(${image.url})` }}
-              >
+              <div className="grid-cell" style={{ backgroundImage: `url(${image.url})` }}>
                 <div className="grid-read-more">
-                  <button className="grid-cell-button">
-                    Read More
-                  </button>
+                  <button className="grid-cell-button">Read More</button>
                 </div>
                 <div className="grid-detail">
                   <span className="grid-detail-title">Mission Impossible</span>
@@ -31,11 +27,15 @@ const Grid = (props) => {
                 </div>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </>
   );
+};
+
+Grid.propTypes = {
+  images: PropTypes.array.isRequired
 };
 
 export default Grid;

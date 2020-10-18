@@ -23,18 +23,20 @@ const Rating = ({ rating, totalStars, className }) => {
   return (
     <div className="star-rating">
       <div className={`back-stars ${className}`}>
-        {noOfStars && noOfStars.map((i) => (
-          <Fragment key={i}>
-            <i className="fa fa-star" aria-hidden="true"></i>
-          </Fragment>
-        ))}
-
-        <div className={`front-stars ${className}`} ref={ratingRef}>
-          {noOfStars && noOfStars.map((i) => (
+        {noOfStars &&
+          noOfStars.map((i) => (
             <Fragment key={i}>
               <i className="fa fa-star" aria-hidden="true"></i>
             </Fragment>
           ))}
+
+        <div className={`front-stars ${className}`} ref={ratingRef}>
+          {noOfStars &&
+            noOfStars.map((i) => (
+              <Fragment key={i}>
+                <i className="fa fa-star" aria-hidden="true"></i>
+              </Fragment>
+            ))}
         </div>
       </div>
     </div>

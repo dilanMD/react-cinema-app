@@ -23,6 +23,7 @@ const Main = (props) => {
 
   useEffect(() => {
     setResponsePageNumber(currentPage, totalPages);
+    // eslint-disable-next-line
   }, [currentPage, totalPages]);
 
   const fetchData = () => {

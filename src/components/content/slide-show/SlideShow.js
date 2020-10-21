@@ -16,6 +16,11 @@ const SlideShow = (props) => {
   let currentSlideIndex = 0;
 
   useEffect(() => {
+    setState((prev) => ({
+      ...prev,
+      slideShow: images[0],
+      slideIndex: 0
+    }));
     if (auto) {
       const timeInterval = setInterval(() => {
         autoMoveSlide();
@@ -29,7 +34,7 @@ const SlideShow = (props) => {
     }
 
     // eslint-disable-next-line
-  }, []);
+  }, [images]);
 
   const autoMoveSlide = () => {
     let lastIndex = 0;
